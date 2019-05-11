@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <body>
+        <h1><%= title %></h1>
+        <p>message</p>
+        <form action="/userRegister" method="POST">
+          Name:<br>
+          <input type="text" name="userName"  >
+          <br>
+          Email:<br>
+          <input type="email" name="email1"  >
+          <br>
+          Repeat Email:<br>
+          <input type="email" name="email2" >
+          <br><br>
+          Password:<br>
+          <input type="password" name="password1"  >
+          <br>
+          Repeat Password:<br>
+          <input type="password" name="password2"  >
+          <br><br>
+          <input type="submit" value="Submit">
+        </form>
+  </body>
+</html>
