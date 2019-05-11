@@ -15,7 +15,7 @@ exports.user_create_post = function (req, res, next) {
     console.log('teste user_create_post');
     // Create an instance of model SomeModel
     var my_user = new UserModel(req.body.userName, req.body.email1, req.body.password1);
-    my_user.save(req.app.locals.dbo);
+    req.app.locals.dBObject.insertOne('ofnSaberDb', 'users', my_user);
 
     console.error(my_user);
     

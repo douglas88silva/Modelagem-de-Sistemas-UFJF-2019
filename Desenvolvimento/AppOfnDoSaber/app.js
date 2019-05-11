@@ -3,10 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var connetDB = require('./models/connectDB');
-
-
-
+var dBObject = require('./models/DBObject');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var userRegisterRouter = require('./routes/userRegister');
@@ -15,7 +12,7 @@ var userLoginFormRouter = require('./routes/userLoginForm');
 
 var app = express();
 
-connetDB.connectDB("mongodb://localhost:27017/", "ofnSaber", app);
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -48,5 +45,7 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+app.locals.dBObject = new dBObject('localhost', 27017, "ofnSaber");
 
 module.exports = app;
