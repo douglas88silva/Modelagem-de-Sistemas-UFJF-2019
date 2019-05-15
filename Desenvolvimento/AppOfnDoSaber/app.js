@@ -12,13 +12,7 @@ var userLoginFormRouter = require('./routes/userLoginForm');
 
 var app = express();
 
-//bootstrap
-app.use('/css', express.static(__dirname + '/node_modules/bootstrap/dist/css'));
-app.use('/js', express.static(__dirname + '/node_modules/bootstrap/dist/js'));
-app.use('/assets', [
-  express.static(__dirname + '/node_modules/jquery/dist/'),
- 
-]);
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
